@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags staticfiles%}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+  <!-- begin of intro wrapper -->
+  {% include 'header.html' %}
+  <!-- end of intro wrapper -->
+
+  <!-- begin of about wrapper -->
+  {% include 'subpages/about.html' %}
+  <!-- end of about wrapper -->
+
+  <!-- begin of service wrapper -->
+  {% include 'subpages/services.html' %}
+  <!-- end of service wrapper -->
+
+  <!-- begin of works wrapper -->
+  {% include 'subpages/works.html' %}
+  <!-- end of works wrapper -->
+
+  <!-- begin of blogs wrapper -->
+  {% include 'subpages/blogs.html' %}
+  <!-- end of blogs wrapper -->
+
+  <!-- begin of testimonials wrapper -->
+  {% include 'subpages/testimonials.html' %}
+  <!-- end of testimonials wrapper -->
+
+  <!-- begin of contact wrapper -->
+  {% include 'subpages/contact.html' %}
+  <!-- end of contact wrapper -->
+
+{% endblock content %}

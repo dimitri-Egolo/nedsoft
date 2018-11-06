@@ -1,0 +1,135 @@
+/*==============================================================================
+
+ * Template Name: qrop - Personal Portfolio Template.
+ * Template URI: 
+ * Author: ixTheme
+ * Description: Responsive HTML5 Template
+ * Version: 1.0
+ * Copyright 2018 ixTheme
+
+==============================================================================*/
+
+.qrop_dark {
+    background-color: #1E292D;
+    color: #fff;
+}
+
+.qrop_dark .fixed_lines .lines {
+	border-right: 1px solid #384448;
+}
+
+.qrop_dark .border-left {
+	border-left: 1px solid #384448 !important;
+}
+
+.qrop_dark nav.nav_fixed {
+	background: #1E292D;
+	border-bottom: 1px solid #384448;
+}
+
+.qrop_dark .service_item .service_icon::after {
+	background-color: #505050;
+}
+
+.qrop_dark nav ul li a,
+.qrop_dark .education_single h4,
+.qrop_dark .experience_single h4,
+.qrop_dark .skills h5,
+.qrop_dark .service_item h4,
+.qrop_dark .owl-nav button span,
+.qrop_dark .filter_buttons button:hover,
+.qrop_dark .testimonial_item p,
+.qrop_dark .work_single_item:hover .work_item_info p,
+.qrop_dark .blog_info p span,
+.qrop_dark .blog_item_info a,
+.qrop_dark .blog_tags li a,
+.qrop_dark footer a,
+.qrop_dark .input_fild {
+	color: #fff;
+}
+
+.filter_buttons button.btn_active,
+.qrop_dark .blog_text_block {
+	color: #fff !important;
+}
+
+.qrop_dark .blog_tags li a:hover,
+.qrop_dark nav ul li.active a,
+.qrop_dark nav ul li a:hover,
+.qrop_dark footer a:hover,
+.blog_item_info a:hover {
+	color: #2564e4;
+}
+
+.qrop_dark .qrop_btn::after {
+	background-color: #12171a;
+}
+
+.qrop_dark .section_subtitle,
+.qrop_dark .service_item p,
+.qrop_dark .blog_item_info p,
+.qrop_dark .blog_info p {
+	color: #ccc;
+}
+
+.qrop_dark .education_single p,
+.qrop_dark .experience_single p {
+	color: #c9c9c9;
+}
+
+.qrop_dark .owl-nav button::after {
+	background-color: #444;
+}
+
+.qrop_dark .testimonial_quote {
+	text-shadow: 2px 2px 0 #2564e4;
+}
+
+.qrop_dark .owl-nav button:hover::after {
+	background-color: #2564e4;
+}
+
+.qrop_dark .owl-nav button.disabled::after, .qrop_dark .owl-nav button.disabled:hover::after {
+	background-color: #444;
+	transform: scale(.4);
+	-webkit-transform: scale(.4);
+	-moz-transform: scale(.4);
+	-ms-transform: scale(.4);
+	-o-transform: scale(.4);
+}
+
+.qrop_dark .filter_buttons button {
+	color: #bbb;
+}
+
+.qrop_dark .work_item_info h4 {
+	color: #000;
+}
+
+.qrop_dark .blog_text_block {
+	background-color: #1b2326;
+	box-shadow: 0 0 15px #1b2326;
+}
+
+.qrop_dark .full_comment {
+	color: #bbb !important;
+}
+
+.qrop_dark .input_fild {
+	border-bottom: 1px solid #aaa;
+}
+
+.qrop_dark footer {
+	background-color: #1E292D;
+	border-top: 1px solid #384448;
+}
+
+@media (max-width: 991px) {
+    .qrop_dark #menu {
+        background: #171d20;
+    }
+    .qrop_dark nav ul li.active a,
+    .qrop_dark nav ul li a:hover {
+        background-color: #151515;
+    }
+}

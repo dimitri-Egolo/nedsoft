@@ -1,0 +1,37 @@
+{% load cms_tags sekizai_tags staticfiles%}
+<div class="qrop_intro_wrap">
+    <!-- begin of navbar -->
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-6 col-5">
+                    <!-- logo -->
+                    <a href="#page_top"><img class="logo" src="{% static "img/nedsoft-logo.png" %}" alt="logo"></a>
+
+                    <ul id="menu">
+                        <li><a href="#qrop_about">about</a></li>
+                        <li><a href="#qrop_services">services</a></li>
+                        <li><a href="#qrop_works">works</a></li>
+                        <li><a href="#qrop_blogs">blogs</a></li>
+                        <li><a href="#qrop_testimonial">testimonial</a></li>
+                        <li class="d-none"><a href="#qrop_contact">say hello</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-7 text-right">
+                    <a class="qrop_btn" href="#qrop_contact">Say Hello</a>
+
+                    <!-- mobile menu button -->
+                    <div class="mobile_menu_btn">
+                        <span class="mbri-menu"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+
+
+    {% placeholder intro or %}{% endplaceholder %}
+
+
+</div>

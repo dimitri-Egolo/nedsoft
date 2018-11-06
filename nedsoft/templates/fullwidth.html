@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags staticfiles%}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+	 {% placeholder content or %}
+	 <div class="ui main text container">
+		 <h1 class="ui header">
+			 Semantic UI Fixed Template
+		 </h1>
+		 <p>
+			 This is a basic fixed menu template using fixed size containers.
+		 </p>
+		 <p>
+			 A text container is used for the main container, which is useful for single column layouts
+		 </p>
+		 <img class="wireframe" src="{% static "images/wireframe/media-paragraph.png" %}"/>
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+		 <img class="wireframe" src="{% static "images/wireframe/paragraph.png" %}" />
+	 </div>
+	 {% endplaceholder %}
+	 {% placeholder "content" %}
+	 {% placeholder "splashbox" %}
+
+{% endblock content %}
