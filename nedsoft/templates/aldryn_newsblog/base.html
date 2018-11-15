@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load cms_tags sekizai_tags staticfiles%}
+{% block content %}
+  <!-- begin of intro wrapper -->
+  <div class="qrop_intro_wrap">
+
+      <!-- begin of navbar -->
+      <nav>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-9 col-md-6 col-5">
+                      <!-- logo -->
+                      <a href="index.html"><img class="logo" src="{% static "img/nedsoft-logo.png" %}" alt="logo"></a>
+
+                      <ul id="menu">
+                          <li><a href="index.html">about</a></li>
+                          <li><a href="index.html">services</a></li>
+                          <li><a href="index.html">works</a></li>
+                          <li><a href="index.html">blogs</a></li>
+                          <li><a href="index.html">testimonial</a></li>
+                          <li class="d-none"><a href="index.html">say hello</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-7 text-right">
+                      <a class="qrop_btn" href="index.html">Say Hello</a>
+
+                      <!-- mobile menu button -->
+                      <div class="mobile_menu_btn">
+                          <span class="mbri-menu"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <!-- end of navbar -->
+  </div>
+  <!-- end of intro wrapper -->
+
+    {% block newsblog_content %}
+        {# article_list.html and article_detail.html extend this template #}
+    {% endblock %}
+{% endblock content %}

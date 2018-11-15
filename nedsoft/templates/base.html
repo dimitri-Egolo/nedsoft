@@ -15,27 +15,7 @@
   <!-- title -->
   <title>nedsoft - {% page_attribute 'page_title' %}</title>
 
-  <!-- =====================================
-  ============   ALL CSS HERE   ============
-  ====================================== -->
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-  <!-- Mobiriseicons-icons -->
-  <link rel="stylesheet" href="{% static "css/mobiriseicons.css" %}">
-  <!-- Animate CSS -->
-  <link rel="stylesheet" href="{% static "css/animate.min.css" %}">
-  <!-- Animated-headline -->
-  <link rel="stylesheet" href="{% static "css/animated-headline.css" %}">
-  <!-- MagnificPopup CSS -->
-  <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
-  <!-- OwlCarousel CSS -->
-  <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
-  <!-- Common CSS -->
-  <link rel="stylesheet" href="{% static "css/common.css" %}">
-  <!-- Style CSS -->
-  <link rel="stylesheet" href="{% static "css/style.css" %}">
-  <!-- Responsive CSS -->
-  <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+  {% include 'stylesheet.html' %}
   {% render_block "css" %}
 </head>
 <body>
@@ -63,16 +43,7 @@
   </div>
   <!-- end of main wrapper -->
 
-
-  <!-- =====================================
-  ============   ALL JS HERE   ============
-  ====================================== -->
-  <!-- jQuery JS -->
-  <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
-  <!-- Plugins JS -->
-  <script src="{% static "js/plugins.js" %}"></script>
-  <!-- Main JS -->
-  <script src="{% static "js/main.js" %}"></script>
+  {% include 'scripts.html' %}
   {% render_block "js" %}
   </body>
 </html>

@@ -1,0 +1,42 @@
+{% extends "aldryn_newsblog/base.html" %}
+{% load i18n %}
+
+{% block newsblog_content %}
+    <!-- begin of blogs wrapper -->
+    <div id="qrop_blogs" class="qrop_blogs section_single_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="section_title">
+                        <span>All</span><br>
+                        <span>Blogs</span>
+                    </h2>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                      {% for article in article_list %}
+                          <!-- blog single item -->
+                          <div class="col-lg-4 col-md-6">
+                              <div class="blog_item mb-40">
+                                  <div class="blog_img">
+                                      <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+                                  </div>
+                                  <div class="blog_item_info">
+                                      <h4>{% render_model article "title" %}</h4>
+                                      <p>{% render_model article "lead_in" %}</p>
+                                      <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">Read More</a>
+                                  </div>
+                              </div>
+                          </div>
+                      {% empty %}
+                          <p>{% trans "No items available" %}</p>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of blogs wrapper -->
+
+    {% include "aldryn_newsblog/includes/pagination.html" %}
+{% endblock %}

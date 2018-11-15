@@ -1,0 +1,124 @@
+{% extends "aldryn_newsblog/base.html" %}
+{% load i18n cms_tags apphooks_config_tags %}
+
+{% block title %}
+    {{ article.title }} - {{ block.super }}
+{% endblock %}
+
+{% block newsblog_content %}
+    <!-- {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %} -->
+
+    <!-- begin of blogs wrapper -->
+    <div id="qrop_blogs" class="qrop_blogs section_single_padding">
+        <div class="single_blog_details">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12">
+                        <h2 class="single_blog_title">{% render_model article "title" %}</h2>
+                        <div class="blog_info">
+                          {% if article.categories.exists %}
+                              <p>
+                                  {% for category in article.categories.all %}
+                                      <!-- <a href="{% namespace_url 'article-list-by-category' category.slug namespace=namespace default='' %}">{{ category.name }}</a> -->
+                                      <span class="mbri-file"></span>{{ category.name }}
+                                      {% if not forloop.last %}, {% endif %}
+                                  {% endfor %}
+                              </p>
+                          {% endif %}
+                            <p><span class="mbri-chat"></span>3 Comments</p>
+                            {% if article.author %}
+                              <p>Written by {{ article.author.name }}</p>
+                            {% endif %}
+                            <p>published on {{ article.publishing_date|date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12">
+                        <img class="blog_single_img img-fluid" src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+                    </div>
+                </div>
+              </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12">
+                        <div class="single_blog_details">
+                            {% render_placeholder article.content language placeholder_language %}
+                            {% if article.tags %}
+                                <div class="blog_tags">
+                                    <ul>
+                                        <li>Tags :</li>
+                                        {% for tag in article.tags.all %}
+                                            <li><a href="{% namespace_url 'article-list-by-tag' tag=tag.slug namespace=namespace default='' %}">#{{ tag.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+
+                            {% if article.comments.exists %}
+                              <div class="blog_comments">
+                                  <h3>Comments ({{ article.comments.count }})</h3>
+                                  {% for article in article.comments.all %}
+                                      {% include "aldryn_newsblog/includes/comment.html" %}
+                                  {% empty %}
+                                      <p>{% trans "No items available" %}</p>
+                                  {% endfor %}
+                              </div>
+                            {% endif %}
+                            <!-- end comments -->
+
+                            <div class="blog_comments">
+                                <h3>Add a Comment</h3>
+
+                                <div class="space-40"></div>
+
+                                <form id="comment_form" action="{% url 'pool:add_comment' article.pk %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="input_fild" type="text" name="name" placeholder="Name*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="input_fild" type="email" name="email" placeholder="Email*">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <textarea class="input_fild" name="comment" placeholder="Comment"></textarea>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <button class="qrop_btn" type="submit">Add Comment <span class="ti-angle-right"></span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of blogs wrapper -->
+            {% static_placeholder "newsblog_social" %}
+
+            <!-- previous and next article -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-md-12">
+
+                        <ul>
+                            {% if prev_article %}
+                                <li><a href="{{ prev_article.get_absolute_url }}">{% trans "Previous Article" %}</a></li>
+                            {% endif %}
+                            <li><a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a></li>
+                            {% if next_article %}
+                                <li><a href="{{ next_article.get_absolute_url }}">{% trans "Next Article" %}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                  </div>
+              </div>
+            <!-- end previous and next article -->
+
+        </div>
+    </div>
+{% endblock %}

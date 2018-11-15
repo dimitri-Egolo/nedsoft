@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     'djangocms_bootstrap4.contrib.bootstrap4_tabs',
     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
     'storages',
+    'pool',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,7 @@ TEMPLATES = [
 
 CMS_TEMPLATES = [
     ('home.html', 'Home page template'),
+    ('aldryn_newsblog/base.html', 'Blog template'),
 ]
 
 ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
