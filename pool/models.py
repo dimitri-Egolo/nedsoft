@@ -21,6 +21,17 @@ class SkillPluginModel(CMSPlugin):
 
 
 @python_2_unicode_compatible
+class ServicePluginModel(CMSPlugin):
+    name = models.CharField(max_length=50, default='', blank=False)
+    description = models.TextField()
+    delay = models.CharField(max_length=50, default='05', blank=True)
+    icon = models.CharField(max_length=50, blank=True, default="mbri-responsive")
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
 class Comment(models.Model):
     name = models.CharField(max_length=50, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,5 +1,5 @@
 {% extends "aldryn_newsblog/base.html" %}
-{% load i18n cms_tags apphooks_config_tags %}
+{% load i18n thumbnail cms_tags apphooks_config_tags %}
 
 {% block title %}
     {{ article.title }} - {{ block.super }}
@@ -75,7 +75,7 @@
 
                                 <div class="space-40"></div>
 
-                                <form id="comment_form" action="{% url 'pool:add_comment' article.pk %}" method="post">
+                                <form id="comment_form" action="{% url 'pool:add-comment' article.pk %}" method="post">
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col-md-6">

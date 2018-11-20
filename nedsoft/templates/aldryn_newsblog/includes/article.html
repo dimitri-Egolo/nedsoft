@@ -4,7 +4,7 @@
 <div class="col-md-4 wow fadeIn" data-wow-delay=".05s">
     <div class="blog_item">
         <div class="blog_img">
-            <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+            <img class="img-fluid" src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
         </div>
         <div class="blog_item_info">
             <h4>{% render_model article "title" %}</h4>

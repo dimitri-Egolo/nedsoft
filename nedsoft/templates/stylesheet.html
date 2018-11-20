@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags staticfiles %}
+{% load staticfiles %}
 <!-- =====================================
 ============   ALL CSS HERE   ============
 ====================================== -->
@@ -12,11 +12,49 @@
 <link rel="stylesheet" href="{% static "css/animated-headline.css" %}">
 <!-- MagnificPopup CSS -->
 <link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
-<!-- OwlCarousel CSS -->
+
+<!-- Owl Stylesheets -->
 <link rel="stylesheet" href="{% static "css/owl.carousel.min.css" %}">
+<!-- <link rel="stylesheet" href="{% static "css/owl.theme.default.min.css" %}"> -->
+
 <!-- Common CSS -->
 <link rel="stylesheet" href="{% static "css/common.css" %}">
 <!-- Style CSS -->
 <link rel="stylesheet" href="{% static "css/style.css" %}">
 <!-- Responsive CSS -->
 <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- owl carousel JS -->
+<script src="{% static "js/owl.carousel.js" %}"></script>
+<script>
+  $(document).ready(function() {
+    var owl = $('#service_carousel');
+    owl.owlCarousel({
+      margin: 30,
+      nav: true,
+      loop: false,
+      navText: ["<span class='mbri-left'></span>", "<span class='mbri-right'></span>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  
+    // brgin of testimonial carousel
+    $('#testimonial_carousel').owlCarousel({
+        nav:true,
+        loop:true,
+        navText: ["<span class='mbri-left'></span>", "<span class='mbri-right'></span>"],
+        items:1
+    });
+    // end of testimonial carousel
+  })
+</script>

@@ -2,7 +2,7 @@
     "use strict";
 
     $(window).on("load", function() {
-        
+
         // preLoader init
         setTimeout(function(){
             $('.preloader p').addClass('loaded').text('loaded');
@@ -42,13 +42,13 @@
         } else {
             $('nav').removeClass('nav_fixed');
         }
-        
+
         // intro opacity init
         $('.qrop_intro').css('opacity', 1 - $(window).scrollTop() / 300);
 
         // scrollToDark init
         var styleTrigger = $('.qrop_about').offset();
-        if($(window).scrollTop() > styleTrigger.top-200){ $('body').addClass('qrop_dark'); } 
+        if($(window).scrollTop() > styleTrigger.top-200){ $('body').addClass('qrop_dark'); }
         else { $('body').removeClass('qrop_dark'); }
 
     });
@@ -56,7 +56,7 @@
     /* =========================================================== */
 
     $(document).ready(function () {
-        
+
         // mobile Menu init
         $('.mobile_menu_btn').on('click', function () {
             $('#menu').toggleClass('show_menu');
@@ -67,7 +67,7 @@
             $('.mobile_menu_btn>span').removeClass('mbri-close').addClass('mbri-menu');
         });
 
-        // onePageNav init 
+        // onePageNav init
         $('nav').onePageNav({
             currentClass: 'active',
             changeHash: false,
@@ -121,7 +121,7 @@
             items:1
         });
         // end of testimonial carousel
-        
+
 
         // magnificPopup init
         $(".zoom-gallery").magnificPopup({
@@ -171,7 +171,7 @@
             .fail(function(data) {
                 $(formMessages).removeClass('success');
                 $(formMessages).addClass('error');
-                if (data.responseText !== '') { $(formMessages).text(data.responseText); } 
+                if (data.responseText !== '') { $(formMessages).text(data.responseText); }
                 else { $(formMessages).text('Oops! An error occured and your message could not be sent.'); }
             });
         });
