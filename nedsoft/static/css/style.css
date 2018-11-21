@@ -1,7 +1,7 @@
 /*==============================================================================
 
  * Template Name: qrop - Personal Portfolio Template.
- * Template URI: 
+ * Template URI:
  * Author: ixTheme
  * Description: Responsive HTML5 Template
  * Version: 1.0
@@ -9,7 +9,7 @@
 
 
 ==============================================================================
-    
+
     [Table of contents]
     ===================
 	+ begin of about section
@@ -576,6 +576,29 @@ nav ul li a:hover {
 	border: 0;
 	outline: 0;
 	cursor: pointer;
+}
+
+#navigation {
+  list-style-type: none;
+}
+
+#navigation li {
+  display: inline;
+  margin-left: 10px;
+}
+
+.prev-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.next-icon {
+  font-size: 24px;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
 }
 
 /* end of blog-single style */
