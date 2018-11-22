@@ -84,7 +84,6 @@ INSTALLED_APPS = [
     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
     'storages',
     'pool',
-    'djangocms_owl',
 ]
 
 MIDDLEWARE = [
