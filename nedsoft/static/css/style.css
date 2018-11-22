@@ -762,6 +762,12 @@ footer {
 	margin-left: 15px;
 }
 
+.footer_nav a {
+	list-style: none;
+	display: inline-block;
+	margin-left: 15px;
+}
+
 footer a {
 	color: #333;
 	font-weight: 500;
