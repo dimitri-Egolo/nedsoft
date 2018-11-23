@@ -42,3 +42,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@python_2_unicode_compatible
+class Request(models.Model):
+    name = models.CharField(max_length=50, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    email = models.CharField(max_length=50, blank=False)
+    message = models.TextField(blank=False)
+    phone = models.CharField(max_length=45, blank=False)
+    attachment = models.FileField()
+
+    def __str__(self):
+        return self.name

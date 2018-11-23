@@ -1,7 +1,7 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
 <div class="media">
-    <img class="mr-3" src="img/blog_user_03.jpg" alt="{{ comment.name }} {{ comment.created_at }}">
+    <img class="mr-3" src="{% static 'img/blog_user_04.png' %}" alt="{{ comment.name }}">
     <div class="media-body">
         <h5 class="comment_author">{{ comment.name }}</h5>
         <p class="comment_info">{{ comment.created_at }}</p>
