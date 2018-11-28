@@ -1,6 +1,6 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from pool.models import SkillPluginModel, ServicePluginModel
+from pool.models import SkillPluginModel, ServicePluginModel, ProjectCategory, Project
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -25,4 +25,18 @@ class ServicePlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context = super(ServicePlugin, self).render(context, instance, placeholder)
+        return context
+
+
+@plugin_pool.register_plugin
+class ProjectPlugin(CMSPluginBase):
+    name = _("latest_projects")
+    render_template = "pool/latest_projects.html"
+    cache = False
+
+    def render(self, context, instance, placeholder):
+        categories = ProjectCategory.objects.all()
+        context['categories'] = categories
+        context['projects'] = Project.objects.all().select_related('category')
+        context = super(ProjectPlugin, self).render(context, instance, placeholder)
         return context

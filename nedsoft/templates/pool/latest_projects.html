@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col">
+        <div class="filter_buttons">
+            <button class="btn_active" data-filter="*">all</button>
+            {% for category in categories %}
+              <button data-filter=".{{category.name}}">{{ category.name }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="row work_items zoom-gallery">
+  {% for project in projects %}
+    <div class="col-lg-4 col-md-6 col-sm-6 design">
+        <div class="work_single_item">
+            <div class="work_image">
+                <a class="zoom_image" href="{{ project.featured_image.url }}">
+                    <img class="img-fluid" src="{{ project.featured_image.url }}" alt="{{project.name}}">
+                </a>
+            </div>
+            <div class="work_item_info">
+                <h4>{{project.name}}</h4>
+                <p>{{project.category.name}}</p>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>

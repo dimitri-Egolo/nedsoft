@@ -32,6 +32,24 @@ class ServicePluginModel(CMSPlugin):
 
 
 @python_2_unicode_compatible
+class ProjectCategory(models.Model):
+    name = models.CharField(max_length=50, default='', blank=False)
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
+class Project(models.Model):
+    name = models.CharField(max_length=50, default='', blank=False)
+    featured_image = models.ImageField(null=False, blank=False)
+    category = models.ForeignKey(ProjectCategory, blank=False, null=False, related_name="projects")
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
 class Comment(models.Model):
     name = models.CharField(max_length=50, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
